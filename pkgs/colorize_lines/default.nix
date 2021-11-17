@@ -26,6 +26,6 @@ stdenv.mkDerivation {
     homepage = "https://weechat.org/scripts/source/colorize_lines.pl.html";
     description = "colors the channel text with nick color and also highlight the whole line colorize_nicks.py script will be supported";
     license = licenses.gpl3;
-    maintainers = with maintainers; [ oakkitten ];
+    maintainers = [ "oakkitten" ];
   };
 }
