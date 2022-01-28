@@ -16,9 +16,21 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-ONTxgVz1l/kJsp1hW+xw8CbvXbIznejWvmoIHiqZX8Q=";
   };
 
-  cargoPatches = [ ./cargo-lock.patch ];
+  # cargoPatches = [ ./cargo-lock.patch ];
 
-  cargoSha256 = "sha256-/JQDUtSSkuO9nrYVSkQOaZjps1BUuH8Bc1SMyDSSJS4=";
+  cargoLock = {
+     lockFile = ./Cargo.lock;
+     outputHashes = {
+        "bp-header-chain-0.1.0" = "0px3i8wc1l4l5bzzg863i9hkjcjdn647ma8q46lbs7fsd81zwqwf";
+        "ckb-merkle-mountain-range-0.3.1" = "03bd1g4zvm24fwacfqy5b6wq66f8ls4xias9lslbn231b8hw9f4m";
+        "ethash-0.4.2" = "0scx4bn3vmsgmkhvkzf65wwypzhxjkgsw5lysh4dhvghny0l9hps";
+        "evm-0.30.1" = "10wis8r1782flc440lqwqdbbbnwj6zcgf3hlbh7q8irfay2c25qx";
+        "fc-rpc-core-1.1.0-dev" = "140plq8i16nj03f7bmdyndx59rfnhiprf2bwwqsaxvc2j1hg7g3p";
+        "fork-tree-3.0.0" = "1cf99f049ndybjsz8cwi2ka8myq7qd3rzzckpgwprbr221hlabz9";
+        "substrate-fixed-0.5.7" = "155jxdrjp516d1jfrn13l1glw9cnwrp63flyah2h9fi7m5ic4qg7";
+        "typenum-1.14.0" = "16sfx79zwff0qflj8q23g56lgv2rz9afixr5lwgqi9xr0sbb5kr6";
+     };
+   };
 
   nativeBuildInputs = [ clang ];
 
