@@ -12,8 +12,8 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "darwinia-network";
     repo = "darwinia-common";
-    rev = "82f4851cc74042a89076c1dbb7c612cce5cded13";
-    sha256 = "sha256-QA2KFz+ml/LXyg6fV8pnNX2iZb4xdGVwiHrGRQvL90k=";
+    rev = "debug-bsc";
+    sha256 = "sha256-ONTxgVz1l/kJsp1hW+xw8CbvXbIznejWvmoIHiqZX8Q=";
   };
 
   cargoPatches = [ ./cargo-lock.patch ];
