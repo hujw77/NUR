@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage rec {
   # We can't run the test suite since we didn't compile the WASM runtimes.
   doCheck = false;
 
-  cargoBuildHook = '--profile release-lto --bin drml'
+  cargoBuildFlags = [ "--profile" "release-lto" "--bin" "drml" ];
 
   meta = with lib; {
     description = "Darwinia Runtime Pallet Library and Pangolin/Pangoro Testnet";
