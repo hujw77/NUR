@@ -16,7 +16,9 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-TBrlPFQEA531RytoGbQicfvdfHW9p/llel6TzXaGHbs=";
   };
 
-  cargoSha256 = "sha256-1qg4ZnSORRVI7eCVMrR7lY3tzo7KJt+dC2RBXqbKrig=";
+  cargoLock = {
+    lockFile = ./Cargo.lock;
+  };
 
   nativeBuildInputs = [ clang ];
 
@@ -31,6 +33,8 @@ rustPlatform.buildRustPackage rec {
 
   # We can't run the test suite since we didn't compile the WASM runtimes.
   doCheck = false;
+
+  cargoBuildHook = '--profile release-lto --bin drml'
 
   meta = with lib; {
     description = "Darwinia Runtime Pallet Library and Pangolin/Pangoro Testnet";
