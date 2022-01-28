@@ -18,6 +18,8 @@ rustPlatform.buildRustPackage rec {
 
   cargoPatches = [ ./cargo-lock.patch ];
 
+  cargoSha256 = "sha256-/JQDUtSSkuO9nrYVSkQOaZjps1BUuH8Bc1SMyDSSJS4=";
+
   nativeBuildInputs = [ clang ];
 
   LIBCLANG_PATH = "${llvmPackages.libclang.lib}/lib";
